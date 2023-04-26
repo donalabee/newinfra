@@ -21,7 +21,7 @@ jobs:
 workflows:
   infra:
     jobs:
-      - deploy:
+      - infra:
           filters:
             branches:
               only: main
