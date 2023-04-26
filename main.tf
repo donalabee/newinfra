@@ -3,6 +3,6 @@ resource "aws_instance" "infra" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "New-Infra"
+    Name = "New_Infra"
   }
 }
