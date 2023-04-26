@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  infra:
+  infra_test:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
@@ -19,13 +19,13 @@ jobs:
           command: terraform plan
 
 workflows:
-  infra:
+  test_on_main:
     jobs:
-      - infra:
+      - infra_test:
           filters:
             branches:
               only: main
-      - infra:
+      - infra_test:
           filters:
             branches:
               only: /^pull\/.*$/
